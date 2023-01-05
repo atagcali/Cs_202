@@ -1,0 +1,26 @@
+OBJS	= hw4.o FlightMap.o flight.o Airport.o
+SOURCE	= hw4.cpp FlightMap.cpp flight.cpp Airport.cpp
+HEADER	= FlightMap.h flight.h Airport.h
+OUT	= hw4.out
+CC	 = g++
+FLAGS	 = -g -c -Wall
+LFLAGS	 = 
+
+all: $(OBJS)
+	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
+
+hw4.o: hw4.cpp
+	$(CC) $(FLAGS) hw4.cpp 
+
+FlightMap.o: FlightMap.cpp
+	$(CC) $(FLAGS) FlightMap.cpp 
+
+flight.o: flight.cpp
+	$(CC) $(FLAGS) flight.cpp 
+
+Airport.o: Airport.cpp
+	$(CC) $(FLAGS) Airport.cpp 
+
+
+clean:
+	rm -f $(OBJS) $(OUT)
